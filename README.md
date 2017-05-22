@@ -2,20 +2,21 @@
 
 Dockerfiles for base images for [executable research containers (ERC)](http://o2r.info/erc-spec) and for use in the [o2r microservice architecture](http://o2r.info/architecture/).
 
+[![license](https://img.shields.io/badge/license-Apache-2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 ## geospatial-ctv
 
-This image comes in three layers, each extending the previous one and installing one [CRAN Task View]().
+This image comes in three layers, each extending the previous one by installing a full [CRAN Task View](https://cran.r-project.org/web/views/).
 
-- `o2rproject/geospatial-ctv:spatial`
-- `o2rproject/geospatial-ctv:spatiotemporal`
-- `o2rproject/geospatial-ctv:spatiotemporal-timeseries`
+- `o2rproject/geospatial-ctv:spatial` has [Spatial](https://cran.r-project.org/web/views/Spatial.html)
+- `o2rproject/geospatial-ctv:spatiotemporal` also has [SpatioTemporal](https://cran.r-project.org/web/views/SpatioTemporal.html)
+- `o2rproject/geospatial-ctv:spatiotemporal-timeseries` also has [TimeSeries](https://cran.r-project.org/web/views/TimeSeries.html)
 
 ### `spatial`
 
-[![license](https://img.shields.io/badge/license-Apache-2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)  [![](https://images.microbadger.com/badges/image/o2rproject/geospatial-ctv.svg)](https://microbadger.com/images/o2rproject/geospatial-ctv)  [![](https://img.shields.io/docker/pulls/o2rproject/geospatial-ctv.svg)](https://hub.docker.com/r/o2rproject/geospatial-ctv) [![](https://img.shields.io/docker/automated/o2rproject/geospatial-ctv.svg)](https://hub.docker.com/r/o2rproject/geospatial-ctv/builds)
+Based on the image [`rocker/geospatial`](https://hub.docker.com/r/rocker/geospatial/).
 
-Extends the image [`rocker/geospatial`](https://hub.docker.com/r/rocker/geospatial/) with the full tasks views [Spatial](https://cran.r-project.org/web/views/Spatial.html), [SpatioTemporal](https://cran.r-project.org/web/views/SpatioTemporal.html), and [TimeSeries](https://cran.r-project.org/web/views/TimeSeries.html).
-
+[![](https://images.microbadger.com/badges/image/o2rproject/geospatial-ctv.svg)](https://microbadger.com/images/o2rproject/geospatial-ctv)  [![](https://img.shields.io/docker/pulls/o2rproject/geospatial-ctv.svg)](https://hub.docker.com/r/o2rproject/geospatial-ctv) [![](https://img.shields.io/docker/automated/o2rproject/geospatial-ctv.svg)](https://hub.docker.com/r/o2rproject/geospatial-ctv/builds)
 
 ### `spatiotemporal`
 
