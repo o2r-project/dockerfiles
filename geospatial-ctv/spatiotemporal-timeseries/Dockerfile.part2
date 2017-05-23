@@ -1,0 +1,129 @@
+FROM o2rproject/geospatial-ctv:spatiotemporal-ts-part1
+
+LABEL maintainer "daniel.nuest@uni-muenster.de"
+
+## Install R packages from CRAN task view TimeSeries
+RUN install2.r --error \
+    #ctv \
+  # takes too long, build gets canceled on Docker Hub:
+  #&& R -e "ctv::install.views('TimeSeries'); warnings()"
+    opera \
+    orderedLasso \
+    paleoTS \
+    partsm \
+    pastecs \
+    PCA4TS \
+    pcdpca \
+    pdc \
+    pdfetch \
+    pear \
+    perARMA \
+    pomp \
+    portes \
+    prophet \
+    psd \
+    ptw \
+    Quandl \
+    quantspec \
+    rdatamarket \
+    RGENERATE \
+    Rlibeemd \
+    rmaf \
+    RMAWGEN \
+    robets \
+    robfilter \
+    robustarima \
+    roll \
+    RSEIS \
+    Rssa \
+    rts \
+    rucrdtw \
+    rugarch \
+    rwt \
+    sae2 \
+    scoringRules \
+    SDD \
+    sde \
+    seas \
+    season \
+    seasonal \
+    seasonalview \
+    Sim.DiffProc \
+    sleekts \
+    smooth \
+    sparsevar \
+    spectral \
+    spectral.methods \
+    spTimer \
+    stlplus \
+    stochvol \
+    stR \
+    strucchange \
+    stsm \
+    stsm.class \
+    surveillance \
+    Tcomp \
+    TED \
+    tempdisagg \
+    tframe \
+    thief \
+    Tides \
+    tiger \
+    timeDate \
+    TimeProjection \
+    timesboot \
+    timeSeries \
+    timsac \
+    tis \
+    tpr \
+    trend \
+    TSA \
+    tsbugs \
+    TSclust \
+    TSdbi \
+    tsdecomp \
+    tsdisagg2 \
+    TSdist \
+    tsDyn \
+    tseries (core) \
+    tseriesChaos \
+    tseriesEntropy \
+    tsfa \
+    tsintermittent \
+    TSMining \
+    tsModel \
+    tsoutliers \
+    tsPI \
+    TSTutorial \
+    tswge \
+    urca \
+    uroot \
+    VAR.etp \
+    vars \
+    VARsignR \
+    Wats \
+    WaveletComp \
+    wavelets \
+    waveslim \
+    wavethresh \
+    wbsts \
+    WeightedPortTest \
+    wmtsa \
+    x12 \
+    x12GUI \
+    x13binary \
+    xts \
+    yuima \
+    ZIM \
+    zoo (core) \
+    ZRA
+
+# Metadata http://label-schema.org/rc1/
+LABEL org.label-schema.vendor="o2r project" \
+      org.label-schema.url="https://github.com/o2r-project/dockerfiles/" \
+      org.label-schema.name="CRAN Task Views 'Spatial', 'SpatioTemporal', and 'TimeSeries'" \
+      org.label-schema.description="Extending rocker/geospatial with the full CRAN Task Views for Spatial, SpatioTemporal, and TimeSeries packages" \    
+      org.label-schema.vcs-url=$VCS_URL \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.docker.schema-version="rc1"

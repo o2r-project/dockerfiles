@@ -1,0 +1,139 @@
+FROM o2rproject/geospatial-ctv:spatiotemporal
+
+LABEL maintainer "daniel.nuest@uni-muenster.de"
+
+## Install R packages from CRAN task view TimeSeries
+RUN install2.r --error \
+    #ctv \
+  # takes too long, build gets canceled on Docker Hub:
+  #&& R -e "ctv::install.views('TimeSeries'); warnings()"
+    acp \
+    AER \
+    ArDec \
+    arfima \
+    astsa \
+    autovarCore \
+    BAYSTAR \
+    bentcableAR \
+    BETS \
+    bfast \
+    BigVAR \
+    biwavelet \
+    BNPTSclust \
+    boot \
+    BootPR \
+    brainwaver \
+    bspec \
+    bsts \
+    CADFtest \
+    carx \
+    cents \
+    changepoint \
+    chron \
+    cointReg \
+    CommonTrend \
+    costat \
+    cts \
+    dataseries \
+    dCovTS \
+    depmix \
+    depmixS4 \
+    deseasonalize \
+    dlm \
+    dlmodeler \
+    dlnm \
+    dse \
+    dtw \
+    dtwclust \
+    dygraphs \
+    dyn \
+    dynlm \
+    dynr \
+    earlywarnings \
+    Ecdat \
+    ecm \
+    ecp \
+    EMD \
+    ensembleBMA \
+    EvalEst \
+    events \
+    expsmooth \
+    factorstochvol \
+    fame \
+    fanplot \
+    fArma \
+    FeedbackTS \
+    fGarch \
+    FGN \
+    FinTS \
+    FitAR \
+    FitARMA \
+    FKF \
+    fma \
+    fNonlinear \
+    ForeCA \
+    forecast (core) \
+    ForecastCombinations \
+    forecastHybrid \
+    forecTheta \
+    fpp \
+    fracdiff \
+    fractal \
+    fractalrock \
+    fts \
+    GAS \
+    gdpc \
+    GeomComb \
+    ggseas \
+    glarma \
+    GMDH \
+    gsarima \
+    gtop \
+    HarmonicRegression \
+    hht \
+    hts \
+    hwwntest \
+    imputeTS \
+    InspectChangepoint \
+    jmotif \
+    KFAS \
+    KFKSDS \
+    kza \
+    locits \
+    lomb \
+    LPStimeSeries \
+    LSTS \
+    ltsa \
+    lubridate \
+    M4comp \
+    mafs \
+    MAPA \
+    mAr \
+    MAR1 \
+    mar1s \
+    MARSS \
+    mclcar \
+    Mcomp \
+    meboot \
+    mFilter \
+    mlVAR \
+    mondate \
+    MSBVAR \
+    MSwM \
+    MTS \
+    multitaper \
+    mvcwt \
+    nets \
+    nlts \
+    nonlinearTseries \
+    npst
+
+# Metadata http://label-schema.org/rc1/
+LABEL org.label-schema.vendor="o2r project" \
+      org.label-schema.url="https://github.com/o2r-project/dockerfiles/" \
+      org.label-schema.name="Half a CRAN Task View 'TimeSeries'" \
+      org.label-schema.description="intermediate image to split up buld time for TimeSeries packages" \    
+      org.label-schema.vcs-url=$VCS_URL \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.docker.schema-version="rc1"

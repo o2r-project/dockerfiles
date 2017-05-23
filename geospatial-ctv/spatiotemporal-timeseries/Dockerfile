@@ -5,6 +5,7 @@ LABEL maintainer "daniel.nuest@uni-muenster.de"
 ## Install R packages from CRAN task view TimeSeries
 RUN install2.r --error \
     ctv \
+  # takes too long, build gets canceled on Docker Hub:
   && R -e "ctv::install.views('TimeSeries'); warnings()"
 
 # Metadata http://label-schema.org/rc1/
