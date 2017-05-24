@@ -2,9 +2,17 @@ FROM o2rproject/geospatial-ctv:spatiotemporal
 
 LABEL maintainer "daniel.nuest@uni-muenster.de"
 
-RUN R -e "devtools::install_github(\"r-hub/sysreqs\")" \
-  && R -e "devtools::install_github(\"harbor\")" \
-  && R -e "devtools::install_github(\"o2r-project/containerit\")"
+RUN  apt-get update \
+  && apt-get install -y --no-install-recommends \
+    # for sys
+    libapparmor-dev \
+  && apt-get autoremove -y \
+  && apt-get autoclean -y \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN R -e "devtools::install_github('r-hub/sysreqs'); \
+      devtools::install_github('wch/harbor'); \
+      devtools::install_github('o2r-project/containerit')"
 
 # Metadata http://label-schema.org/rc1/
 LABEL org.label-schema.vendor="o2r project" \
