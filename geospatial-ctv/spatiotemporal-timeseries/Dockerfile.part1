@@ -7,6 +7,7 @@ RUN install2.r --error \
     #ctv \
   # takes too long, build gets canceled on Docker Hub:
   #&& R -e "ctv::install.views('TimeSeries'); warnings()"
+  # split up of task view packages, first part as of 2017-04-25
     acp \
     AER \
     ArDec \
